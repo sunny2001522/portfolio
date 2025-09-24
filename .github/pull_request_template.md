@@ -1,15 +1,15 @@
-## Ticket
+## 相關票證 (Ticket)
 
-## Description
+## PR 內容描述 (Description)
 
-## Type
+## 更動類型 (Type)
 
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] This change requires a documentation update
 
-## Page
+## 影響頁面 (Page)
 
 - [ ] index
 - [ ] Front-end
@@ -17,7 +17,7 @@
 - [ ] UIUX
 - [ ] overall
 
-## Checklist
+## 自我檢核表 (Checklist)
 
 - [ ] 我已經在本地手動測試過，確保功能的完整性和穩定性
 - [ ] 我對我的程式碼進行了註解，特別是在難以理解的地方
