@@ -1,6 +1,86 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "This is the English version of the homepage."
+    "title": "Welcome to Our Website",
+    "about": "This is an amazing platform that helps you achieve your goals.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "success": "Success!",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close"
+  },
+  "Form": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "phone": "Phone Number",
+    "address": "Address",
+    "submit": "Submit",
+    "reset": "Reset",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "User": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "preferences": "Preferences",
+    "account": "Account",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "security": "Security"
+  },
+  "Time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "thisYear": "This Year",
+    "minute": "minute",
+    "minutes": "minutes",
+    "hour": "hour",
+    "hours": "hours",
+    "day": "day",
+    "days": "days",
+    "week": "week",
+    "weeks": "weeks",
+    "month": "month",
+    "months": "months",
+    "year": "year",
+    "years": "years"
+  },
+  "Status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "cancelled": "Cancelled"
   }
 }

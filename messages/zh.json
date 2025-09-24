@@ -1,6 +1,86 @@
 {
   "HomePage": {
-    "title": "你好世界！",
-    "about": "這是首頁的中文版本。"
+    "title": "歡迎來到我們的網站",
+    "about": "這是一個幫助您實現目標的絕佳平台。",
+    "getStarted": "開始使用",
+    "learnMore": "了解更多"
+  },
+  "Navigation": {
+    "home": "首頁",
+    "about": "關於我們",
+    "services": "服務項目",
+    "contact": "聯絡我們",
+    "login": "登入",
+    "logout": "登出"
+  },
+  "Common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "success": "成功！",
+    "cancel": "取消",
+    "confirm": "確認",
+    "save": "儲存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "search": "搜尋",
+    "filter": "篩選",
+    "sort": "排序",
+    "previous": "上一頁",
+    "next": "下一頁",
+    "close": "關閉"
+  },
+  "Form": {
+    "name": "姓名",
+    "email": "電子郵件",
+    "password": "密碼",
+    "confirmPassword": "確認密碼",
+    "phone": "電話號碼",
+    "address": "地址",
+    "submit": "提交",
+    "reset": "重設",
+    "required": "此欄位為必填",
+    "invalidEmail": "請輸入有效的電子郵件地址",
+    "passwordTooShort": "密碼長度至少需要8個字元",
+    "passwordMismatch": "密碼不一致"
+  },
+  "User": {
+    "profile": "個人檔案",
+    "settings": "設定",
+    "preferences": "偏好設定",
+    "account": "帳戶",
+    "billing": "帳單",
+    "notifications": "通知",
+    "privacy": "隱私",
+    "security": "安全性"
+  },
+  "Time": {
+    "today": "今天",
+    "yesterday": "昨天",
+    "tomorrow": "明天",
+    "thisWeek": "本週",
+    "thisMonth": "本月",
+    "thisYear": "今年",
+    "minute": "分鐘",
+    "minutes": "分鐘",
+    "hour": "小時",
+    "hours": "小時",
+    "day": "天",
+    "days": "天",
+    "week": "週",
+    "weeks": "週",
+    "month": "月",
+    "months": "月",
+    "year": "年",
+    "years": "年"
+  },
+  "Status": {
+    "active": "啟用",
+    "inactive": "停用",
+    "pending": "待處理",
+    "approved": "已核准",
+    "rejected": "已拒絕",
+    "completed": "已完成",
+    "inProgress": "處理中",
+    "cancelled": "已取消"
   }
 }
