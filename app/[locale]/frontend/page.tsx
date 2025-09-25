@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Introduction from "@/components/page/front-end/Introduction";
 
 // app/[locale]/frontend/page.tsx
 export default async function FrontEndPage() {
@@ -6,8 +7,7 @@ export default async function FrontEndPage() {
 
   return (
     <div>
-      <h1>{t("title")}</h1>
-      <p>這是 FE 頁面</p>
+      <Introduction />
     </div>
   );
 }
