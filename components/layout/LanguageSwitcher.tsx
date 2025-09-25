@@ -12,8 +12,8 @@ import {
 import { useParams } from "next/navigation";
 
 const languages = [
-  { value: "en", label: "English", flag: "🇺🇸" },
-  { value: "zh", label: "中文", flag: "🇹🇼" },
+  { value: "en", label: "Eng" },
+  { value: "zh", label: "中" },
 ];
 
 export default function LanguageSwitcher() {
@@ -35,16 +35,14 @@ export default function LanguageSwitcher() {
       <SelectTrigger className="w-[140px]">
         <SelectValue>
           <span className="flex items-center gap-2">
-            {currentLanguage?.flag} {currentLanguage?.label}
+            {currentLanguage?.label}
           </span>
         </SelectValue>
       </SelectTrigger>
       <SelectContent>
         {languages.map((language) => (
           <SelectItem key={language.value} value={language.value}>
-            <span className="flex items-center gap-2">
-              {language.flag} {language.label}
-            </span>
+            <span className="flex items-center gap-2">{language.label}</span>
           </SelectItem>
         ))}
       </SelectContent>
