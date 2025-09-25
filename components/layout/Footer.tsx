@@ -1,13 +1,16 @@
 import { getTranslations } from "next-intl/server";
+import { FaLinkedin } from "react-icons/fa";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 
-// app/[locale]/frontend/page.tsx
 export default async function Header() {
   const t = await getTranslations("HomePage");
 
   return (
-    <div className="flex w-full">
-      <h1>{t("title")}</h1>
-      <p>這是 FE 頁面</p>
+    <div className="flex  gap-6 py-3 mx-auto">
+      <MdMarkEmailUnread className="text-3xl" />
+      <FaLinkedin className="text-3xl" />
+      <FaGithub className="text-3xl" />
     </div>
   );
 }
