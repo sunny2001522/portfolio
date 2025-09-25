@@ -5,7 +5,6 @@ export default async function HomePage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  // 在服務器組件中使用 getTranslations 而不是 useTranslations
   const t = await getTranslations("HomePage");
 
   return (

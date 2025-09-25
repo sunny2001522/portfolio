@@ -1,13 +1,24 @@
+import Engineer from "@/components/page/front-end/Engineer";
 import { getTranslations } from "next-intl/server";
-import Introduction from "@/components/page/front-end/Introduction";
 
 // app/[locale]/frontend/page.tsx
 export default async function FrontEndPage() {
-  const t = await getTranslations("HomePage"); // 假設你使用 HomePage 的翻譯
+  const t = await getTranslations("Frontend");
+
+  // 使用數字索引的方式
+  const aboutItems = [
+    t("about.skill"), // 注意這裡要用 about.0 而不是 '0'
+    t("about.hobby"),
+    t("about.description"),
+  ];
 
   return (
     <div className="h-full">
-      <Introduction />
+      <Engineer
+        introductionTitle={t("title")}
+        introductionAbout={aboutItems} // 使用 aboutItems 而不是 t("about", { returnObjects: true })
+        introductionMe={t("me")}
+      />
     </div>
   );
 }

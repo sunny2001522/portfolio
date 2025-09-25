@@ -1,13 +1,24 @@
 import Image from "next/image";
 
-const Introduction = () => {
+export default function Introduction({
+  title,
+  about,
+  me,
+}: {
+  title: string;
+  about: string[];
+  me: string;
+}) {
   return (
     <div className="relative w-full h-full snap-center snap-always  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-center justify-center">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-        <p>歡迎來到</p>
-        <h2 className="text-4xl font-bold text-center col-span-full">
-          EXuan Art盲盒店
-        </h2>
+        <h2>{title}</h2>
+        <p>{me}</p>
+        <ul className="text-sm">
+          {about.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="w-80 rotate-3  z-20 absolute left-3/4 top-20">
@@ -88,7 +99,7 @@ const Introduction = () => {
         className="absolute right-0 top-0 z-0 h-dvh"
         unoptimized
         width={600}
-        height={2000}
+        height={2400}
       />
       <Image
         src="/shape/shape12.webp"
@@ -108,6 +119,4 @@ const Introduction = () => {
       />
     </div>
   );
-};
-
-export default Introduction;
+}

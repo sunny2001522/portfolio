@@ -29,6 +29,16 @@
     "next": "Next",
     "close": "Close"
   },
+
+   "Frontend": {
+    "title": "Frontend Engineer",
+    "me": "Sonia",
+    "about": {
+      "skill": "Good at interactive web pages.",
+      "hobby": "I enjoy coding and design.",
+      "description": "This is the third line of the introduction."
+      }
+    },
   "Form": {
     "name": "Name",
     "email": "Email",

@@ -29,6 +29,14 @@
     "next": "下一頁",
     "close": "關閉"
   },
+   "Frontend": {
+    "title": "前端工程師",
+    "me": "Sonia",
+    "about": {
+      "skill": "Good at interactive web pages.",
+      "hobby": "我喜歡寫程式和設計。",
+      "description": "這是第三行介紹文字。"
+    }},
   "Form": {
     "name": "姓名",
     "email": "電子郵件",
