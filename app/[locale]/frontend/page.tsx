@@ -6,7 +6,7 @@ export default async function FrontEndPage() {
   const t = await getTranslations("HomePage"); // 假設你使用 HomePage 的翻譯
 
   return (
-    <div>
+    <div className="h-full">
       <Introduction />
     </div>
   );

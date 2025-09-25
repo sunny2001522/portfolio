@@ -34,8 +34,11 @@ export default async function LocaleLayout({
         className={`flex min-h-screen flex-col justify-between ${climateCrisis.variable}`}
       >
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main>{children}</main>
+          <div className="h-screen">
+            <Header />
+            <main className="overflow-y-auto h-full">{children}</main>
+          </div>
+
           <Footer />
         </NextIntlClientProvider>
       </body>
