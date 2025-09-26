@@ -1,32 +1,27 @@
 import Image from "next/image";
+import Web from "./Web";
+import { useTranslations } from "next-intl";
 
-export default function Introduction({
-  title,
-  about,
-  me,
-}: {
-  title: string;
-  about: string[];
-  me: string;
-}) {
+export default function Introduction() {
+  const t = useTranslations("Frontend");
+
   return (
     <div className="relative w-full h-full snap-center snap-always  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-center justify-center">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-        <h2>{title}</h2>
-        <p>{me}</p>
+      <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 z-50">
+        <h2>{t("title")}</h2>
+        <p>{t("me")}</p>
         <ul className="text-sm">
-          {about.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
+          <li>{t("about.skill")}</li>
+          <li>{t("about.description")}</li>
         </ul>
       </div>
 
-      <div className="w-80 rotate-3  z-20 absolute left-3/4 top-20">
+      <div className=" rotate-3  z-20 absolute left-3/4 top-20">
         <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
           PM
         </h2>
       </div>
-      <div className="w-96  z-20 -rotate-3 absolute left-10 top-1/3">
+      <div className=" z-20 -rotate-3 absolute left-10 top-1/3">
         <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
           前端工程師
         </h2>
@@ -43,23 +38,19 @@ export default function Introduction({
       </div>
 
       {/* 裝飾 */}
+      <div className="absolute w-1/4 z-5 rotate-3 bottom-1/5 right-1/16">
+        <Web />
+      </div>
 
       <Image
         src="/shape/shape10.webp"
         alt="decoration 2"
-        className="absolute left-1/2 top-20 z-10 w-40 animate-spin"
+        className="absolute right-1/4 top-20 z-10 w-40 animate-spin"
         unoptimized
         width={32}
         height={32}
       />
-      <Image
-        src="/shape/shape11.webp"
-        alt="decoration 2"
-        className="absolute left-1/6 top-20 z-10 w-40 animate-spin"
-        unoptimized
-        width={32}
-        height={32}
-      />
+
       <Image
         src="/shape/shape16.webp"
         alt="decoration 2"
@@ -71,8 +62,7 @@ export default function Introduction({
       <Image
         src="/shape/shape3.webp"
         alt="decoration 3"
-        className="absolute left-10 bottom-1/2 z-10 w-40 spin"
-        data-animate="rotate"
+        className="absolute left-10 bottom-1/2 z-10 w-40"
         unoptimized
         width={32}
         height={32}
@@ -116,6 +106,14 @@ export default function Introduction({
         unoptimized
         width={200}
         height={200}
+      />
+      <Image
+        src="/shape/shape11.webp"
+        alt="decoration 2"
+        className="absolute left-1/6 bottom-1/14 z-10 w-40 animate-spin"
+        unoptimized
+        width={32}
+        height={32}
       />
     </div>
   );

@@ -6,20 +6,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Introduction from "@/components/page/front-end/Introduction";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Engineer = ({
-  introductionTitle,
-  introductionAbout,
-  introductionMe,
-}: {
-  introductionTitle: string;
-  introductionAbout: string[];
-  introductionMe: string;
-}) => {
+const Engineer = () => {
   const mainRef = useRef(null);
   const boxRef = useRef(null);
+  const t = useTranslations("Frontend");
 
   useGSAP(
     () => {
@@ -76,7 +70,7 @@ const Engineer = ({
         alt="工程師"
         width={260} // It's good practice to add width/height for images from /public
         height={200}
-        className="z-20 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-bounce"
+        className="z-20 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 "
         style={{ transformStyle: "preserve-3d" }}
       />
       <section
@@ -87,11 +81,7 @@ const Engineer = ({
           id="section1"
           className="scroll-section h-screen flex flex-col items-center justify-center "
         >
-          <Introduction
-            title={introductionTitle}
-            about={introductionAbout}
-            me={introductionMe}
-          />
+          <Introduction />
         </div>
 
         <div

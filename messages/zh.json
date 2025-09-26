@@ -31,11 +31,11 @@
   },
    "Frontend": {
     "title": "前端工程師",
-    "me": "Sonia",
+    "me": "illumi",
     "about": {
-      "skill": "Good at interactive web pages.",
+      "skill": "設計與電影背景的工程師，擅長互動式網頁。",
       "hobby": "我喜歡寫程式和設計。",
-      "description": "這是第三行介紹文字。"
+      "description": "2025鐵人賽分享「在Vibe Coding 時代一起來做沒有AI感的漂亮網站吧！」"
     }},
   "Form": {
     "name": "姓名",
