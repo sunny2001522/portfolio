@@ -7,7 +7,7 @@ export default function Introduction() {
 
   return (
     <div className="relative w-full h-full snap-center snap-always  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-center justify-center">
-      <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 z-50">
+      <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 z-50 text-wrap w-1/3">
         <h2>{t("title")}</h2>
         <p>{t("me")}</p>
         <ul className="text-sm">
