@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Web from "./Web";
+
 import { useTranslations } from "next-intl";
+import Bubble from "@/components/ui/Bubble";
 
 export default function Introduction() {
   const t = useTranslations("Frontend");
@@ -40,6 +42,12 @@ export default function Introduction() {
       {/* 裝飾 */}
       <div className="absolute w-1/4 z-5 rotate-3 bottom-1/5 right-1/16">
         <Web />
+      </div>
+
+      <div className="w-96 h-96 z-50">
+        {" "}
+        {/* 設定你想要的大小 */}
+        <Bubble />
       </div>
 
       <Image
