@@ -69,8 +69,8 @@ const Engineer = () => {
         ref={boxRef}
         src="/character/frontend.webp"
         alt="工程師"
-        width={260} // It's good practice to add width/height for images from /public
-        height={200}
+        width={280} // It's good practice to add width/height for images from /public
+        height={400}
         className="z-20 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 "
         style={{ transformStyle: "preserve-3d" }}
       />
@@ -97,9 +97,6 @@ const Engineer = () => {
           id="section3"
           className="scroll-section h-screen flex flex-col items-center justify-center bg-violet-200 relative"
         >
-          <h2 className="absolute top-1/2 right-1/3 -translate-y-1/2">
-            Projects
-          </h2>
           <Project />
         </div>
         <div
