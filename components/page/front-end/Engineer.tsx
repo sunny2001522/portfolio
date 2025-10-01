@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Introduction from "@/components/page/front-end/Introduction";
+import Project from "@/components/page/front-end/Project";
 import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -99,6 +100,7 @@ const Engineer = () => {
           <h2 className="absolute top-1/2 right-1/3 -translate-y-1/2">
             Projects
           </h2>
+          <Project />
         </div>
         <div
           id="section4"
