@@ -546,7 +546,7 @@
     "linkedin": "LinkedIn",
     "resume": "下載履歷",
     "ithome": "itHome",
-    "resume_filename": "SoniaResumeFeZh.pdf",
+    "resume": "/SoniaResumeFeZh.pdf",
     "github": "GitHub",
     "phone": "手機",
     "email": "電子郵件"
@@ -562,7 +562,8 @@
       "skill": "設計與動畫背景，專注於美感與互動。",
       "hobby": "我喜歡設計和動畫。",
       "description": "2025鐵人賽分享「在Vibe Coding 時代一起來做沒有AI感的漂亮網站吧！ 」"
-    }
+    },
+    "resume": "/SoniaResumeUIZh.pdf"
   },
   "pm": {
     "title": "PM",
@@ -571,7 +572,8 @@
       "skill": "設計與動畫背景，專注於美感與互動。",
       "hobby": "我喜歡設計和動畫。",
       "description": "2025鐵人賽分享「在Vibe Coding 時代一起來做沒有AI感的漂亮網站吧！」"
-    }
+    },
+    "resume": "/SoniaResumePmZh.pdf"
   },
   "fe": {
     "title": "前端工程師",
@@ -580,6 +582,7 @@
       "skill": "設計和電影的背景讓我富有平面及動態美感，善於創造以人為本、愉悅的網頁體驗",
       "hobby": "我喜歡設計和動畫。",
       "description": "2025鐵人賽分享「在Vibe Coding 時代一起來做沒有AI感的漂亮網站吧！ 」"
-    }
+    },
+    "resume": "/SoniaResumeFeZh.pdf"
   }
 }

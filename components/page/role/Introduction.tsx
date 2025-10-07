@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Web from "./Web";
+import Link from "next/link";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Bubble from "@/components/ui/Bubble";
+import { Button } from "@/components/ui/button";
+import { FaFileDownload } from "react-icons/fa";
 
 export default function Introduction({ role }: { role: string }) {
   const t = useTranslations(role);
+  const resume = t("resume");
 
   return (
     <div className="relative w-full h-full snap-center snap-always  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-center justify-center">
@@ -16,6 +20,15 @@ export default function Introduction({ role }: { role: string }) {
           <li>{t("about.skill")}</li>
           <li>{t("about.description")}</li>
         </ul>
+        <Button
+          asChild
+          className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+        >
+          <Link href={t("resume")} download={t("resume")}>
+            <FaFileDownload className="mr-2" />
+            Resume
+          </Link>
+        </Button>
       </div>
 
       {/* 裝飾 */}
@@ -23,7 +36,7 @@ export default function Introduction({ role }: { role: string }) {
         <Web />
       </div>
 
-      <div className="w-96 h-96 z-50">
+      <div className="w-96 h-96 z-50 absolute bottom-0">
         {" "}
         {/* 設定你想要的大小 */}
         <Bubble />

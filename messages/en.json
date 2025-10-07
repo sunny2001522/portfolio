@@ -477,14 +477,15 @@
     "next": "Next",
     "close": "Close"
   },
-  "Frontend": {
+  "fe": {
     "title": "Frontend Engineer",
     "me": "illumi",
     "about": {
       "skill": "Good at interactive web pages.",
       "hobby": "",
       "description": "Share 30 days post on iTHome."
-    }
+    },
+    "resume": "SoniaResumeFeZh.pdf"
   },
   "Form": {
     "name": "Name",
@@ -544,7 +545,7 @@
     "title": "Contact Me",
     "linkedin": "LinkedIn",
     "resume": "Download Resume",
-    "resume_filename": "SoniaResumeFeEn.pdf",
+    "resume": "SoniaResumeFeEn.pdf",
     "github": "GitHub",
     "phone": "Phone",
     "email": "Email"
@@ -560,7 +561,8 @@
       "skill": "Background in design and animation, focusing on aesthetics and interaction.",
       "hobby": "I enjoy design and animation.",
       "description": "Sharing 'Design-Driven Web Interaction Experience' at the 2025 Ironman Competition."
-    }
+    },
+    "resume": "SoniaResumeUIZh.pdf"
   },
   "pm": {
     "title": "PM",
@@ -569,6 +571,7 @@
       "skill": "Background in design and animation, focusing on aesthetics and interaction.",
       "hobby": "I enjoy design and animation.",
       "description": "Sharing 'Design-Driven Web Interaction Experience' at the 2025 Ironman Competition."
-    }
+    },
+    "resume": "SoniaResumePMZh.pdf"
   }
 }
