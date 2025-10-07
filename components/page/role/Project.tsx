@@ -47,6 +47,7 @@ export default function Project({
 
   return (
     <div className="w-full  my-4  grid grid-cols-12 gap-8 p-8 text-black">
+      <h2 className="text-[96px] absolute z-0 top-0">Projects</h2>
       {/* 左側縮圖列表 */}
       <div className="col-span-1 flex flex-col  gap-4 justify-center">
         {projects.map((project: Project, index: number) => (

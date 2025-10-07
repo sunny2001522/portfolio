@@ -39,20 +39,13 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         },
       });
 
-      tl.to(box, { duration: 1, ease: "none" });
+      tl.to(box, { rotation: 24, duration: 1, ease: "none" });
 
       tl.to(box, {
-        x: "25vw",
-        y: "10vh",
-        scale: 0.8,
-        duration: 1,
-        ease: "none",
-      });
-
-      tl.to(box, {
-        x: "-40vw",
-        y: "10vh",
+        x: "-45vw",
+        y: "5vh",
         scale: 1.2,
+        rotation: 0,
         rotationY: 180,
         duration: 1,
         ease: "none",
@@ -80,7 +73,7 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         alt="character"
         width={280}
         height={400}
-        className="z-20 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 "
+        className="z-20 absolute top-1/3 left-1/2 rotate-6 -translate-x-1/2 -translate-y-1/2 "
         style={{ transformStyle: "preserve-3d" }}
       />
       <section
@@ -96,14 +89,6 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
 
         <div
           id="section2"
-          className="scroll-section h-screen bg-blue-200 flex flex-col items-center justify-center relative"
-        >
-          <h2 className="absolute top-1/2 left-1/3 -translate-y-1/2">
-            {t("skillsTitle")}
-          </h2>
-        </div>
-        <div
-          id="section3"
           className="scroll-section  flex flex-col items-center justify-center relative"
         >
           <Project projects={data.projects} skills={data.skills} role={role} />
@@ -111,9 +96,7 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         <div
           id="section4"
           className="scroll-section h-screen flex items-center justify-center bg-red-200 relative"
-        >
-          <Contact contact={data.contact} resume={data.resume} />
-        </div>
+        ></div>
       </section>
     </>
   );

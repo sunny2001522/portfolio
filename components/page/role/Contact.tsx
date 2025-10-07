@@ -50,15 +50,7 @@ export default function Contact({ contact, resume }: ContactProps) {
         ))}
       </div>
       <div className="mt-8">
-        <Button
-          asChild
-          className="bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
-        >
-          <Link href={resumePath} download={resumeFileName}>
-            <FaFileDownload className="mr-2" />
-            {t("resume")}
-          </Link>
-        </Button>
+        
       </div>
     </div>
   );
