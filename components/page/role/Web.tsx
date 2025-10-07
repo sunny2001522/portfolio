@@ -15,7 +15,7 @@ const slides = [
     description: "展現大自然壯麗與細膩。",
   },
   {
-    img: "/web/web3.webp",
+    img: "/web/web3.png",
     title: "風景攝影",
     description: "展現大自然壯麗與細膩。",
   },

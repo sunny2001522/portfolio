@@ -5,19 +5,28 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Introduction from "@/components/page/front-end/Introduction";
-import Project from "@/components/page/front-end/Project";
 import { useTranslations } from "next-intl";
+import Introduction from "@/components/page/role/Introduction";
+import Project from "@/components/page/role/Project";
+import Contact from "@/components/page/role/Contact";
+import { RoleData } from "@/lib/types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Engineer = () => {
-  const mainRef = useRef(null);
-  const boxRef = useRef(null);
-  const t = useTranslations("Frontend");
+interface RolePageClientProps {
+  data: RoleData;
+  role: string;
+}
+
+const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
+  const t = useTranslations("RolePage");
+  const mainRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLImageElement>(null);
 
   useGSAP(
     () => {
+      if (!boxRef.current || !mainRef.current) return;
+
       const box = boxRef.current;
 
       const tl = gsap.timeline({
@@ -41,8 +50,8 @@ const Engineer = () => {
       });
 
       tl.to(box, {
-        x: "-20vw",
-        y: "-10vh",
+        x: "-40vw",
+        y: "10vh",
         scale: 1.2,
         rotationY: 180,
         duration: 1,
@@ -68,8 +77,8 @@ const Engineer = () => {
       <Image
         ref={boxRef}
         src="/character/frontend.webp"
-        alt="工程師"
-        width={280} // It's good practice to add width/height for images from /public
+        alt="character"
+        width={280}
         height={400}
         className="z-20 absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 "
         style={{ transformStyle: "preserve-3d" }}
@@ -82,7 +91,7 @@ const Engineer = () => {
           id="section1"
           className="scroll-section h-screen flex flex-col items-center justify-center "
         >
-          <Introduction />
+          <Introduction role={role} />
         </div>
 
         <div
@@ -90,24 +99,24 @@ const Engineer = () => {
           className="scroll-section h-screen bg-blue-200 flex flex-col items-center justify-center relative"
         >
           <h2 className="absolute top-1/2 left-1/3 -translate-y-1/2">
-            My Skills
+            {t("skillsTitle")}
           </h2>
         </div>
         <div
           id="section3"
-          className="scroll-section h-screen flex flex-col items-center justify-center bg-violet-200 relative"
+          className="scroll-section  flex flex-col items-center justify-center relative"
         >
-          <Project />
+          <Project projects={data.projects} skills={data.skills} role={role} />
         </div>
         <div
           id="section4"
           className="scroll-section h-screen flex items-center justify-center bg-red-200 relative"
         >
-          <h2 className="absolute top-24 left-1/2 -translate-x-1/2">Contact</h2>
+          <Contact contact={data.contact} resume={data.resume} />
         </div>
       </section>
     </>
   );
 };
 
-export default Engineer;
+export default RolePageClient;

@@ -4,8 +4,8 @@ import Web from "./Web";
 import { useTranslations } from "next-intl";
 import Bubble from "@/components/ui/Bubble";
 
-export default function Introduction() {
-  const t = useTranslations("Frontend");
+export default function Introduction({ role }: { role: string }) {
+  const t = useTranslations(role);
 
   return (
     <div className="relative w-full h-full snap-center snap-always  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 items-center justify-center">
@@ -16,27 +16,6 @@ export default function Introduction() {
           <li>{t("about.skill")}</li>
           <li>{t("about.description")}</li>
         </ul>
-      </div>
-
-      <div className=" rotate-3  z-20 absolute left-3/4 top-20">
-        <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
-          PM
-        </h2>
-      </div>
-      <div className=" z-20 -rotate-3 absolute left-10 top-1/3">
-        <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
-          前端工程師
-        </h2>
-      </div>
-      <div className=" z-20 -rotate-6 absolute bottom-20 right-20">
-        <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
-          UIUX
-        </h2>
-      </div>
-      <div className=" z-20 -rotate-6 absolute top-20 left-20">
-        <h2 className="text-xl font-bold p-3 bg-gradient-to-l from-white/50 to-white/20 text-nowrap backdrop-blur-sm border-2 shadow-sm rounded-full rotate-3">
-          平面與動態設計師
-        </h2>
       </div>
 
       {/* 裝飾 */}
