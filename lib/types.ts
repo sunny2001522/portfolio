@@ -1,4 +1,3 @@
-
 export interface ProjectLink {
   type: "GitHub" | "Vercel";
   url: string;
@@ -49,3 +48,30 @@ export interface RoleData {
   contact: Contact[];
   resume: Resume;
 }
+
+export interface Role {
+  key: "fe" | "ui" | "pm";
+  labelKey: string;
+  color: string;
+  img: string;
+}
+
+// Gallery types
+export interface GallerySkill {
+  img: string;
+  title: string;
+}
+
+
+export interface GallerySlide {
+  title: string;
+  adj: string;
+  character: string;
+  skill: GallerySkill[];
+  contentImg: React.ReactNode;
+  color: string;
+  award: string[];
+  description: string[];
+}
+
+export type GallerySlides = GallerySlide[];

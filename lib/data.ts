@@ -81,7 +81,30 @@ import {
   Contact,
   Resume,
   RoleData,
-} from './types';
+  Role,
+} from "./types";
+
+
+export const roles: Role[] = [
+  {
+    key: "fe",
+    labelKey: "fe.title",
+    color: "bg-blue-200",
+    img: "/character/frontend.webp",
+  },
+  {
+    key: "ui",
+    labelKey: "ui.title",
+    color: "bg-rose-200",
+    img: "/character/ui.webp",
+  },
+  {
+    key: "pm",
+    labelKey: "pm.title",
+    color: "bg-violet-200",
+    img: "/character/pm.webp",
+  },
+];
 
 // 新的 Project 物件結構，包含 zh/en/role-specific descriptions
 export const feProjects: Project[] = [

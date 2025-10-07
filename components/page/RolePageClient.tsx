@@ -10,6 +10,7 @@ import Introduction from "@/components/page/role/Introduction";
 import Project from "@/components/page/role/Project";
 import Contact from "@/components/page/role/Contact";
 import { RoleData } from "@/lib/types";
+import RoleSelect from "../ui/RoleSelect";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,8 +60,6 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         duration: 1,
         ease: "none",
       });
-
-      tl.to(box, { duration: 0.5, ease: "none" });
     },
     { scope: mainRef }
   );
@@ -93,10 +92,9 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         >
           <Project projects={data.projects} skills={data.skills} role={role} />
         </div>
-        <div
-          id="section4"
-          className="scroll-section h-screen flex items-center justify-center bg-red-200 relative"
-        ></div>
+        <div id="section3" className="scroll-section ">
+          <RoleSelect value={role} />
+        </div>
       </section>
     </>
   );
