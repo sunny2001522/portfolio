@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Pagination, Navigation } from "swiper/modules";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -18,9 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 const slideData = [
   {
     title: "fe",
-    character: "/character/frontend.webp",
+    character: "/character/fe.webp",
     contentImg: <Web />,
-    fallbackImg: "/character/frontend.webp",
     color: "linear-gradient(to top, #96E7F1 10%, transparent 90%)",
     award: ["role.fe.award.0", "role.fe.award.1"],
     description: ["role.fe.description.0", "role.fe.description.1"],
@@ -30,7 +29,6 @@ const slideData = [
     title: "ui",
     character: "/character/ui.webp",
     contentImg: <Web />,
-    fallbackImg: "/character/ui.webp",
     color: "linear-gradient(to top, #FFC1B3 10%, transparent 90%)",
     award: ["role.ui.award.0", "role.ui.award.1"],
     description: ["role.ui.description.0", "role.ui.description.1"],
@@ -38,9 +36,8 @@ const slideData = [
   },
   {
     title: "pm",
-    character: "/character/frontend.webp",
+    character: "/character/pm.webp",
     contentImg: <Web />,
-    fallbackImg: "/character/frontend.webp",
     color: "linear-gradient(to top, #DCCAF1 10%, transparent 90%)",
     award: ["role.pm.award.0", "role.pm.award.1"],
     description: ["role.pm.description.0", "role.pm.description.1"],
@@ -48,9 +45,8 @@ const slideData = [
   },
   {
     title: "design",
-    character: "/character/frontend.webp",
+    character: "/character/design.webp",
     contentImg: <Web />,
-    fallbackImg: "/character/frontend.webp",
     color: "linear-gradient(to top, #FFD98D 10%, transparent 90%)",
     award: ["role.design.award.0", "role.design.award.1"],
     description: ["role.design.description.0", "role.design.description.1"],
@@ -67,7 +63,7 @@ const Gallery = ({ role }: { role: string }) => {
 
   // 計算初始 slide index (在 slides 陣列中，選擇中間那組的對應位置)
   const initialIndex = slideData.length + validRoleIndex;
-
+  const locale = useLocale();
   const [activeIndex, setActiveIndex] = useState(initialIndex);
   const swiperRef = useRef<any>(null);
   const characterRef = useRef(null);
@@ -104,32 +100,22 @@ const Gallery = ({ role }: { role: string }) => {
   // 滾動動畫 - 只針對中間角色圖
   useGSAP(() => {
     if (characterRef.current && containerRef.current) {
-      // 清除舊的 ScrollTrigger
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
       gsap.fromTo(
         characterRef.current,
         {
           y: 50,
+          scale: 0.8,
           opacity: 0,
+          xPercent: -50,
         },
         {
           y: 0,
+          scale: 1,
           opacity: 1,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-            end: "top 20%",
-            scrub: 1,
-            // markers: true, // 開發時可以啟用
-          },
+          xPercent: -50,
         }
       );
     }
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, [activeIndex]);
 
   return (
@@ -213,7 +199,7 @@ const Gallery = ({ role }: { role: string }) => {
                           </div>
                         ) : (
                           <img
-                            src={slide.fallbackImg}
+                            src={slide.character}
                             alt={slide.title}
                             className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg opacity-60"
                             draggable="false"
@@ -279,16 +265,21 @@ const Gallery = ({ role }: { role: string }) => {
       </div>
 
       {/* 中間角色圖 - 加入滾動動畫 */}
-      <Link href={`/${locales[0]}/${slideData[currentDataIndex].title}`}>
+      <Link href={`/${locale}/${slideData[currentDataIndex].title}`}>
         <img
+          ref={characterRef}
           src={slideData[currentDataIndex].character}
           alt={slideData[currentDataIndex].title}
-          className="w-56 object-cover rounded-2xl absolute left-1/2 bottom-1/5 -translate-x-1/2 z-20 max-md:w-40 max-md:bottom-32 hover:scale-105 transition-all hover:cursor-pointer hover:rotate-2 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+          className="w-56 object-cover rounded-2xl absolute left-1/2 bottom-1/5 -translate-x-1/2 z-20 max-md:w-40 max-md:bottom-32  transition-all hover:cursor-pointer  hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] "
           draggable="false"
+          style={{ transformStyle: "preserve-3d" }}
         />
       </Link>
-      <Link href={`/${slideData[currentDataIndex].title}`}>
-        <Button className="z-40">選擇角色</Button>
+      <Link
+        href={`/${locale}/${slideData[currentDataIndex].title}`}
+        className="z-40"
+      >
+        <Button>選擇角色</Button>
       </Link>
     </div>
   );

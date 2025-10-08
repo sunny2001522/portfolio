@@ -44,7 +44,7 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
       tl.to(box, {
         x: "-45vw",
         y: "5vh",
-        scale: 1.2,
+        scale: 0.8,
         rotation: 0,
         rotationY: 180,
         duration: 1,
@@ -52,7 +52,7 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
       });
 
       tl.to(box, {
-        x: "0vw",
+        x: "-10vw",
         y: "0vh",
         scale: 0.5,
         rotationY: 360,
@@ -67,10 +67,10 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
     <>
       <Image
         ref={boxRef}
-        src="/character/frontend.webp"
+        src={`/character/${role}.webp`}
         alt="character"
         width={280}
-        height={400}
+        height={450}
         className="z-20 absolute top-1/3 left-1/2 rotate-6 -translate-x-1/2 -translate-y-1/2 "
         style={{ transformStyle: "preserve-3d" }}
       />
