@@ -46,10 +46,12 @@ export default function Project({
   if (!activeProject) return null;
 
   return (
-    <div className="w-full  my-4  grid grid-cols-12 gap-8 p-8 text-black">
-      <h2 className="text-[96px] absolute z-0 top-0">Projects</h2>
+    <div className="w-full h-full  my-4  md:grid md:grid-cols-12 gap-8 p-8 text-black">
+      <h2 className="text-[60px] md:text-[96px] absolute z-0 top-0 ">
+        Projects
+      </h2>
       {/* 左側縮圖列表 */}
-      <div className="col-span-1 flex flex-col  gap-4 justify-center">
+      <div className="md:col-span-1 flex mt-5 md:mt-0 md:flex-col  gap-4 justify-center">
         {projects.map((project: Project, index: number) => (
           <button
             key={project.id}
@@ -69,7 +71,7 @@ export default function Project({
           </button>
         ))}
       </div>
-      <div className="col-span-2"></div>
+      <div className="md:col-span-2"></div>
 
       {/* 中間專案內容 */}
       <div className="col-span-6 flex flex-col justify-center gap-4 h-full">
@@ -87,10 +89,42 @@ export default function Project({
             className="w-full h-auto "
           />
         </div>
+        <div className="block md:hidden justify-start  rounded-2xl overflow-x-scroll">
+          <div className="space-y-1 flex ">
+            {Object.entries(categorizedSkills).map(
+              ([category, skills]: [string, Skill[]]) => (
+                <div className="flex gap-1 items-center">
+                  {skills.map((skill: Skill) => {
+                    const isUsed = activeProject.skills.includes(skill.name);
+                    return (
+                      <div
+                        key={skill.name}
+                        className={`flex flex-col w-15 items-center gap-1 p-1 rounded-lg transition-all duration-300 ${
+                          isUsed
+                            ? "opacity-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                            : "opacity-20 grayscale"
+                        }`}
+                        title={skill.name}
+                      >
+                        <Image
+                          src={skill.icon}
+                          alt={skill.name}
+                          width={32}
+                          height={32}
+                          className="object-contain"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )
+            )}
+          </div>
+        </div>
 
         <div
           key={activeProject.id}
-          className="bg-white/70 backdrop-blur-md flex-1  p-6  rounded-xl shadow-lg border border-gray-200 h-10"
+          className="bg-white/70 backdrop-blur-md overflow-hidden p-6  rounded-xl shadow-lg border border-gray-200 h-80"
         >
           <div className="flex justify-between items-baseline mb-4 ">
             <h3 className="text-2xl font-bold text-gray-800">
@@ -114,16 +148,7 @@ export default function Project({
               ))}
             </div>
           </div>
-          {/* 顯示描述 */}
-          <div className="mb-4 text-gray-700">
-            {activeProject.description &&
-              activeProject.description[locale as "zh" | "en"] &&
-              activeProject.description[locale as "zh" | "en"]![
-                role as "fe" | "pm" | "ui"
-              ]}
-          </div>
-
-          <div className="space-y-4 text-base text-gray-700 gap-2 h-50 overflow-y-auto">
+          <div className="text-base text-gray-700 gap-2 h-full pb-12 space-y-4 overflow-y-scroll">
             <>
               <div className="">
                 <h4 className="text-sm font-semibold text-gray-600 mb-2 border-b pb-1">
@@ -196,10 +221,7 @@ export default function Project({
       </div>
 
       {/* 右側技能表 */}
-      <div className="col-span-3 flex flex-col justify-start bg-white/50 backdrop-blur-sm p-4 rounded-2xl shadow-inner border overflow-y-auto">
-        <h4 className="text-lg font-semibold mb-4 text-gray-800 text-center sticky top-0">
-          使用技術
-        </h4>
+      <div className="hidden md:block md:col-span-3  justify-start bg-white/50 backdrop-blur-sm p-4 rounded-2xl shadow-inner border overflow-y-auto">
         <div className="space-y-1">
           {Object.entries(categorizedSkills).map(
             ([category, skills]: [string, Skill[]]) => (

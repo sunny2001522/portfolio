@@ -4,7 +4,7 @@ export const pmProjects: Project[] = [
   {
     id: "gamified-weight-loss",
     year: "2025",
-    thumbnail: "/web/web2.webp",
+    thumbnail: "/web/gamified-weight-loss.webp",
     links: [
       { type: "GitHub", url: "https://github.com/TooruTW/GoBetGoal" },
       { type: "Vercel", url: "https://gobetgoal.vercel.app/" },
@@ -29,7 +29,7 @@ export const uiProjects: Project[] = [
   {
     id: "gamified-weight-loss",
     year: "2025",
-    thumbnail: "/web/web2.webp",
+    thumbnail: "/web/gamified-weight-loss.webp",
     links: [
       { type: "GitHub", url: "https://github.com/TooruTW/GoBetGoal" },
       { type: "Vercel", url: "https://gobetgoal.vercel.app/" },
@@ -39,7 +39,7 @@ export const uiProjects: Project[] = [
   {
     id: "hotel-website",
     year: "2025",
-    thumbnail: "/web/web1.webp",
+    thumbnail: "/web/hotel-website.webp",
     links: [
     ],
     skills: ["Figma", "Photoshop", "Illustrator", "UI/UX"],
@@ -47,7 +47,7 @@ export const uiProjects: Project[] = [
   {
     id: "portfolio",
     year: "2025",
-    thumbnail: "/web/web3.png",
+    thumbnail: "/web/portfolio.webp",
     links: [
       { type: "GitHub", url: "https://github.com/sunny2001522/portfolio" },
       { type: "Vercel", url: "exuan-website-dev.vercel.app" },
@@ -57,7 +57,7 @@ export const uiProjects: Project[] = [
   {
     id: "metro-app",
     year: "2025",
-    thumbnail: "/web/web4.jpg",
+    thumbnail: "/web/metro-app.webp",
     links: [
 
     ],
@@ -70,9 +70,6 @@ export const uiSkills: Skills = {
     { name: "Figma", icon: "/skills/figma.webp" },
     { name: "Photoshop", icon: "/skills/ps.webp" },
     { name: "Illustrator", icon: "/skills/ai.webp" },
-  ],
-  "UI/UX": [
-    { name: "UI/UX", icon: "/skills/lovable.webp" },
   ],
 };
 import {
@@ -111,7 +108,7 @@ export const feProjects: Project[] = [
   {
     id: "gamified-weight-loss",
     year: "2025",
-    thumbnail: "/web/web2.webp",
+    thumbnail: "/web/gamified-weight-loss.webp",
     links: [
       { type: "GitHub", url: "https://github.com/TooruTW/GoBetGoal" },
       { type: "Vercel", url: "https://gobetgoal.vercel.app/" },
