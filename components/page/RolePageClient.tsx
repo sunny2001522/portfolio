@@ -43,7 +43,7 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
 
       tl.to(box, {
         x: "-45vw",
-        y: "5vh",
+        y: "-20vh",
         scale: 0.8,
         rotation: 0,
         rotationY: 180,
@@ -59,35 +59,46 @@ const RolePageClient: React.FC<RolePageClientProps> = ({ data, role }) => {
         duration: 1,
         ease: "none",
       });
+      tl.to(box, {
+        x: "-10vw",
+        y: "0vh",
+        opacity: 0,
+        scale: 0.5,
+        rotationY: 360,
+        duration: 1,
+        ease: "none",
+      });
     },
     { scope: mainRef }
   );
 
   return (
     <>
-      <Image
-        ref={boxRef}
-        src={`/character/${role}.webp`}
-        alt="character"
-        width={280}
-        height={450}
-        className="z-20 absolute top-1/3 left-1/2 rotate-6 -translate-x-1/2 -translate-y-1/2 "
-        style={{ transformStyle: "preserve-3d" }}
-      />
+      <div className=" w-[20vw] aspect-[2/3] absolute top-1/3 left-2/3 md:left-1/2">
+        <Image
+          ref={boxRef}
+          src={`/character/${role}.webp`}
+          alt="character"
+          fill
+          className="z-20"
+          style={{ transformStyle: "preserve-3d" }}
+          draggable="false"
+        />
+      </div>
       <section
         ref={mainRef}
-        className="relative scroll-container z-10 text-6xl font-bold"
+        className="relative scroll-container z-10 text-6xl font-bold pt-[64px]"
       >
         <div
           id="section1"
-          className="scroll-section h-screen flex flex-col items-center justify-center "
+          className="scroll-section  flex flex-col items-center justify-center h-[calc(100vh-64px)]"
         >
           <Introduction role={role} />
         </div>
 
         <div
           id="section2"
-          className="scroll-section  flex flex-col items-center justify-center relative"
+          className="scroll-section  flex flex-col items-center justify-center relative h-[calc(100vh-64px)]"
         >
           <Project projects={data.projects} skills={data.skills} role={role} />
         </div>
