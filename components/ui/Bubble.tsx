@@ -3,16 +3,28 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-});
+// 修復：使用正確的導入路徑
+const Spline = dynamic(
+  () => import("@splinetool/react-spline").then((mod) => mod.default),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-gray-50 rounded-lg">
+        <div className="text-center p-6">
+          <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 rounded-full animate-pulse"></div>
+          <p className="text-gray-600">載入 3D 場景中...</p>
+        </div>
+      </div>
+    ),
+  }
+);
 
 interface BubbleProps {
   scene?: string;
 }
 
 export default function Bubble({
-  scene = "/models/bubble.splinecode", // 預設使用本地檔案
+  scene = "/models/bubble.splinecode",
 }: BubbleProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -70,7 +82,6 @@ export default function Bubble({
         minHeight: "200px",
       }}
     >
-
       <Spline scene={scene} onLoad={onLoad} onError={onError} />
     </div>
   );
