@@ -3,7 +3,6 @@ import Web from "./Web";
 // import Link from "next/link";
 
 import { useLocale, useTranslations } from "next-intl";
-import Bubble from "@/components/ui/Bubble";
 // import { Button } from "@/components/ui/button";
 // import { FaFileDownload } from "react-icons/fa";
 
@@ -34,11 +33,6 @@ export default function Introduction({ role }: { role: string }) {
       {/* 裝飾 */}
       <div className="absolute w-2/3 md:w-1/3 lg:w-1/4 z-40 rotate-3 bottom-1/5 right-1/16">
         <Web role={role as "fe" | "pm" | "ui" | "design"} isActive={true} />
-      </div>
-
-      <div className="w-80 h-80 z-10 absolute bottom-1/2 translate-y-1/2 right-10 hidden md:block">
-        {" "}
-        <Bubble />
       </div>
 
       <Image
