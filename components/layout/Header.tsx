@@ -1,20 +1,36 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
 import LanguageSwitcher from "./LanguageSwitcher";
 import Image from "next/image";
-import decor1 from "../asset/decor/decor1.webp";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 
 // app/[locale]/frontend/page.tsx
-export default async function Header() {
-  const t = await getTranslations("HomePage");
+export default function Header() {
+  const t = useTranslations("HomePage");
+  const locale = useLocale();
 
   return (
-    <div className="flex w-full justify-between max-w-330 mx-auto py-3">
-      <div className="flex">
-        <Image src={decor1} alt="hero image" className="h-8 w-8" />
-        <h1 className="text-xl font-bold">{t("title")}</h1>
-      </div>
+    <div className="flex w-full    py-3 backdrop-blur-sm bg-white/30 items-center px-4 fixed z-[9999]">
+      <div className="flex mx-auto max-w-330 justify-between w-full">
+        <div className="flex ">
+          <Image
+            src="/shape/shape1.webp"
+            alt="hero image"
+            className="h-8 w-8"
+            width={32}
+            height={32}
+          />
+          <Link href={`/${locale}`}>
+            {" "}
+            <h1 className="text-xl font-bold ">
+              {t("title")}
+            </h1>
+          </Link>
+        </div>
 
-      <LanguageSwitcher />
+        <LanguageSwitcher />
+      </div>
     </div>
   );
 }

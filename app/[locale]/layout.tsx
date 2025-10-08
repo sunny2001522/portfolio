@@ -35,7 +35,11 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main>{children}</main>
+
+          <main className="flex-grow z-0 overflow-hidden w-full">
+            {children}
+          </main>
+
           <Footer />
         </NextIntlClientProvider>
       </body>
