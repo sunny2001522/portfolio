@@ -3,6 +3,8 @@
     "title": "Sonia",
     "about": "這是一個幫助您實現目標的絕佳平台。",
     "getStarted": "開始使用",
+    "intro": "買一隻Sonia",
+    "intro2": "玩偶嗎？",
     "learnMore": "了解更多"
   },
   "projects": {
@@ -451,6 +453,30 @@
             "提升公共運輸使用體驗，促進文化觀光與在地連結"
           ]
         }
+      }
+    },
+    "book": {
+      "title": "捷運盃黑客松專案：台北捷運 App Redesign",
+      "design": {
+      }
+    },
+    "iceverseProduct": {
+      "title": "捷運盃黑客松專案：台北捷運 App Redesign",
+      "design": {
+      }
+    },
+    "iceverse": {
+      "title": "捷運盃黑客松專案：台北捷運 App Redesign",
+      "design": {
+      }
+    },
+    "actor": {
+      "title": "捷運盃黑客松專案：台北捷運 App Redesign",
+      "design": {
+      }
+    },"taipei": {
+      "title": "捷運盃黑客松專案：台北捷運 App Redesign",
+      "design": {
       }
     }
   },

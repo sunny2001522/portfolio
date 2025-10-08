@@ -1,8 +1,13 @@
+"use client";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { MdArticle } from "react-icons/md";
+import { useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function Footer() {
+  const locale = useLocale();
   const socialLinks = [
     {
       icon: <FaLinkedin />,
@@ -24,10 +29,15 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white py-8">
-      <div className="container mx-auto px-4 flex justify-between">
-        <h2 className="text-2xl font-bold">Sonia</h2>
+      <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between gap-3">
+        <Link href={`/${locale}`}>
+          {" "}
+          <h2 className="text-2xl font-bold hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]">
+            Sonia
+          </h2>
+        </Link>
         <div className="flex flex-col items-start">
-          <div className="flex space-x-6 mb-4">
+          <div className="flex space-x-6 ">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -41,13 +51,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
-
-          <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Sonia Chen. All Rights Reserved.
-          </p>
         </div>
         <div className="flex flex-col ">
-          <div className="flex items-center space-x-2 mb-2">
+          <div className="flex items-center space-x-2 mb-2 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]">
             <MdPhone />
             <a
               href="tel:0978649787"
@@ -56,7 +62,7 @@ export default function Footer() {
               0978649787
             </a>
           </div>
-          <div className="flex items-center space-x-2 mb-2">
+          <div className="flex items-center space-x-2 mb-2 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]">
             <MdEmail />
             <a
               href="mailto:yishiuan522@gmail.com"
@@ -67,6 +73,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <p className="text-sm text-gray-400 mx-auto px-4">
+        &copy; {new Date().getFullYear()} Sonia Chen. All Rights Reserved.
+      </p>
     </footer>
   );
 }

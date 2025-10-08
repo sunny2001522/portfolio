@@ -2,7 +2,9 @@
   "HomePage": {
     "title": "Sonia",
     "about": "This is an amazing platform that helps you achieve your goals.",
-    "getStarted": "Get Started",
+    "intro": "Buy",
+    "intro2": "a Sonia?",
+
     "learnMore": "Learn More"
   },
   "projects": {
