@@ -1,6 +1,16 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import "../globals.css";
+import { Climate_Crisis } from "next/font/google";
+
+const climateCrisis = Climate_Crisis({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-climate", // 使用 CSS 變數
+});
 
 export default async function LocaleLayout({
   children,
@@ -20,9 +30,17 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body
+        className={`flex min-h-screen flex-col justify-between ${climateCrisis.variable}`}
+      >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Header />
+
+          <main className="flex-grow z-0 overflow-hidden w-full">
+            {children}
+          </main>
+
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
