@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Web from "../page/role/Web";
 import { Button } from "./button";
 import Link from "next/link";
+import type { Swiper as SwiperType } from "swiper";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,10 +62,11 @@ const Gallery = ({ role }: { role: string }) => {
   const initialIndex = slideData.length + validRoleIndex + 1;
   const locale = useLocale();
   const [activeIndex, setActiveIndex] = useState(initialIndex);
-  const swiperRef = useRef<any>(null);
-  const characterRef = useRef(null);
-  const bgRef = useRef(null);
-  const containerRef = useRef(null);
+
+  const swiperRef = useRef<SwiperType | null>(null);
+  const characterRef = useRef<HTMLImageElement | null>(null);
+  const bgRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   // 將 slides 的 index 轉換為 slideData 的 index
   const currentDataIndex = activeIndex % slideData.length;
@@ -73,13 +75,13 @@ const Gallery = ({ role }: { role: string }) => {
   const t = useTranslations(currentRole);
 
   // 初始化 Swiper 時設定正確的 slide
-  const handleSwiper = (swiper: any) => {
+  const handleSwiper = (swiper: SwiperType) => {
     swiperRef.current = swiper;
     swiper.slideTo(initialIndex, 0); // 立即跳到指定位置，無動畫
   };
 
   // Swiper slide 切換時更新 activeIndex
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.realIndex);
   };
 

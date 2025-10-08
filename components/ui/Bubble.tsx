@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 
 // 修復：使用正確的導入路徑
 const Spline = dynamic(
-  () => import("@splinetool/react-spline").then((mod) => mod.default),
+  () =>
+    import("@splinetool/react-spline/next").then((mod) => mod.default ?? mod),
   {
     ssr: false,
     loading: () => (
