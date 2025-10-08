@@ -126,11 +126,13 @@ const Gallery = ({ role }: { role: string }) => {
         style={{ overflow: "visible" }}
       >
         <Swiper
-          style={{
-            "--swiper-navigation-color": "#8C8C8C",
-            "--swiper-pagination-color": "#fff",
-            overflow: "visible",
-          }}
+          style={
+            {
+              "--swiper-navigation-color": "#8C8C8C",
+              "--swiper-pagination-color": "#fff",
+              overflow: "visible",
+            } as React.CSSProperties
+          }
           onSwiper={handleSwiper}
           onSlideChange={handleSlideChange}
           centeredSlides={true}
