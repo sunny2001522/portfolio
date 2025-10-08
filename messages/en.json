@@ -485,7 +485,9 @@
       "hobby": "",
       "description": "Share 30 days post on iTHome."
     },
-    "resume": "SoniaResumeFeZh.pdf"
+    "resume": "SoniaResumeFeZh.pdf",
+    "award": ["2023 Frontend Hackathon Winner", "2022 UI Innovation Award"],
+    "description": ["2025 HexSchool Rocket Team Graduate", "2021 UX Annual Award"]
   },
   "Form": {
     "name": "Name",
@@ -562,7 +564,9 @@
       "hobby": "I enjoy design and animation.",
       "description": "Sharing 'Design-Driven Web Interaction Experience' at the 2025 Ironman Competition."
     },
-    "resume": "SoniaResumeUIZh.pdf"
+    "resume": "SoniaResumeUIZh.pdf",
+    "award": ["2023 Design Rookie Award", "2021 UX Annual Award"],
+    "description": ["Freelance Designer", "Former Designer at Foreign Tech Company"]
   },
   "pm": {
     "title": "PM",
@@ -572,6 +576,13 @@
       "hobby": "I enjoy design and animation.",
       "description": "Sharing 'Design-Driven Web Interaction Experience' at the 2025 Ironman Competition."
     },
-    "resume": "SoniaResumePMZh.pdf"
+    "resume": "SoniaResumePMZh.pdf",
+    "award": ["2022 Project Management Award", "2020 Team Leadership Award"],
+    "description": ["Project Management Expert", "Agile Development Practitioner"]
+  },
+  "design": {
+    "title": "Graphic Designer",
+    "award": ["2024 Chinese Design Award Honorable Mention", "2025 Artiver Finalist (USA)"] ,
+    "description": ["Freelance Designer", "Former Designer at Foreign Tech Company"]
   }
 }

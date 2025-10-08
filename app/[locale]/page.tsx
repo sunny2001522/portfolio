@@ -14,7 +14,7 @@ export default async function HomePage({
       <h1>{t("title")}</h1>
       <p>{t("about")}</p>
       <div className="mt-8 w-full">
-        <RoleSelect value="fe" />
+        <RoleSelect role={t("role.fe")} />
       </div>
     </div>
   );
